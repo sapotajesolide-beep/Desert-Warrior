@@ -1,20 +1,77 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desert Warrior</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Desert Warrior Game</h1>
-    <div>
-        <h2>Weapon System</h2>
-        <p>Your character can purchase weapons using collected coins to fight enemies.</p>
-        <p>Current Weapon: Sword</p>
-        <p>Sword levels:</p>
-        <ul>
-            <li>Level 1: Basic Sword - Cost: 50 coins</li>
-            <li>Level 2: Enchanted Sword - Cost: 100 coins</li>
-            <li>Level 3: Legendary Sword - Cost: 200 coins</li>
-        </ul>
-        <p>Upgrade your sword to become stronger against enemies!</p>
+    <div class="game-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🏜️ Desert Warrior 🏜️</h1>
+            <div class="stats">
+                <div class="stat">
+                    <span>❤️ Health:</span>
+                    <span id="health">100</span>
+                </div>
+                <div class="stat">
+                    <span>💰 Coins:</span>
+                    <span id="coins">0</span>
+                </div>
+                <div class="stat">
+                    <span>⚔️ Level:</span>
+                    <span id="weaponLevel">1</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Area -->
+        <div class="game-area">
+            <div class="player" id="player"></div>
+            <div class="enemies" id="enemies-container"></div>
+        </div>
+
+        <!-- Control Panel -->
+        <div class="control-panel">
+            <div class="controls">
+                <p>Use <strong>Arrow Keys</strong> or <strong>WASD</strong> to move</p>
+                <p>Press <strong>SPACE</strong> to attack</p>
+                <p>Press <strong>U</strong> to upgrade weapon</p>
+            </div>
+
+            <!-- Weapon Shop -->
+            <div class="shop">
+                <h2>⚔️ Weapon Shop</h2>
+                <div class="weapon-info">
+                    <p>Current Weapon: <strong id="currentWeapon">Basic Sword</strong></p>
+                    <p>Damage: <strong id="damage">10</strong></p>
+                </div>
+                <div class="upgrades">
+                    <button class="upgrade-btn" onclick="upgradeWeapon()">
+                        Level 2: Enchanted Sword - Cost: 100 coins
+                    </button>
+                    <button class="upgrade-btn" onclick="upgradeWeapon()">
+                        Level 3: Legendary Sword - Cost: 200 coins
+                    </button>
+                    <button class="upgrade-btn" onclick="upgradeWeapon()">
+                        Level 4: Divine Sword - Cost: 400 coins
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div class="game-over" id="gameOverScreen">
+            <div class="game-over-content">
+                <h2 id="gameOverTitle">Game Over</h2>
+                <p>Final Score: <strong id="finalScore">0</strong></p>
+                <button onclick="restartGame()">Play Again</button>
+            </div>
+        </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
